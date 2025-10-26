@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PLNT Earth — Unified Field Hub (Initializing)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://plnt.earth/" />
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    :root{
+      --bg:#0a0b0f;
+      --fg:#e6f1ff;
+      --muted:#7e8ca6;
+      --accent:#7df9ff;
+      --ok:#7CFFB2;
+      --warn:#FFD166;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 800px at 70% -10%, #1a1f2b 0%, #0a0b0f 55%, #05060a 100%);
+      color:var(--fg); font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      display:grid; place-items:center; padding:24px;
+    }
+    .card{
+      width:min(760px, 92vw); background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.12); border-radius:18px; padding:28px 26px 22px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
+      position:relative; overflow:hidden;
+    }
+    .glow{
+      position:absolute; inset:-40%; background:
+        radial-gradient(40% 40% at 20% 10%, rgba(125,249,255,.20), transparent 60%),
+        radial-gradient(35% 35% at 85% 25%, rgba(124,255,178,.16), transparent 60%);
+      filter: blur(40px); pointer-events:none; z-index:0;
+      animation: drift 18s linear infinite alternate;
+    }
+    @keyframes drift{
+      from{transform:translateY(-6%) translateX(2%)}
+      to{transform:translateY(6%) translateX(-2%)}
+    }
+    h1{
+      margin:0 0 8px; font-size:clamp(22px, 4vw, 28px); letter-spacing:.4px;
+      display:flex; align-items:center; gap:.5ch;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%; background:var(--accent);
+      box-shadow:0 0 16px var(--accent), 0 0 40px rgba(125,249,255,.35);
+      animation:pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1); opacity:.9}
+      50%{transform:scale(1.25); opacity:1}
+    }
+    p{margin:0 0 14px; color:var(--muted)}
+    .row{display:flex; flex-wrap:wrap; gap:12px; margin-top:10px}
+    .chip{
+      flex:1 1 220px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px; padding:12px 14px;
+    }
+    .k{display:block; font-size:12px; color:var(--muted); letter-spacing:.3px; text-transform:uppercase}
+    .v{display:flex; align-items:center; gap:8px; font-weight:600}
+    .ok{color:var(--ok)} .warn{color:var(--warn)}
+    .links{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    a.btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:12px; text-decoration:none; color:#0b0c10;
+      background:linear-gradient(180deg, #7df9ff 0%, #73f0f6 100%);
+      border:1px solid rgba(0,0,0,.08); font-weight:700;
+    }
+    .subdued{
+      color:var(--muted); font-size:13px; margin-top:12px
+    }
+    footer{opacity:.7; margin-top:14px; font-size:12px; color:var(--muted)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+  </style>
+</head>
+<body>
+  <div class="card" role="region" aria-label="PLNT Earth status">
+    <div class="glow" aria-hidden="true"></div>
+    <h1><span class="dot" aria-hidden="true"></span> PLNT Earth — Unified Field Hub</h1>
+    <p>Initializing the hub. If you can see this, DNS + hosting are reachable. This page will be replaced by the live hub.</p>
+
+    <div class="row" id="checks">
+      <div class="chip" aria-live="polite">
+        <span class="k">Domain</span>
+        <span class="v mono" id="host">—</span>
+      </div>
+      <div class="chip" aria-live="polite">
+        <span class="k">Protocol</span>
+        <span class="v mono" id="proto">—</span>
+      </div>
+      <div class="chip" aria-live="polite">
+        <span class="k">www Redirect (fallback)</span>
+        <span class="v" id="wwwStatus">Checking…</span>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="btn" href="https://plnt.earth/">Enter Hub</a>
+      <a class="btn" href="https://time.plnt.earth/">Time</a>
+      <a class="btn" href="https://mirrorhoney.plnt.earth/">MirrorHoney</a>
+      <a class="btn" href="https://earth.plnt.earth/">Earth</a>
+    </div>
+
+    <p class="subdued">Tip: set <span class="mono">plnt.earth</span> as your Primary Domain in Vercel. Add <span class="mono">www</span> as an alias that redirects to root.</p>
+    <footer>© PLNT Earth · This page is temporary and safe to remove.</footer>
+  </div>
+
+  <script>
+    (function(){
+      // Self-checks
+      var host = location.hostname;
+      var proto = location.protocol.replace(':','');
+      var hostEl = document.getElementById('host');
+      var protoEl = document.getElementById('proto');
+      var wwwEl = document.getElementById('wwwStatus');
+
+      hostEl.textContent = host || '(local)';
+      protoEl.textContent = (proto === 'https' ? 'https ✓' : proto + ' (consider HTTPS)');
+
+      // Fallback client redirect from www -> apex (in case DNS/hosting redirect isn't set yet)
+      if (host.toLowerCase().startsWith('www.')) {
+        wwwEl.innerHTML = '<span class="warn">Redirecting off www…</span>';
+        var apex = host.replace(/^www\./i, '');
+        // Give a moment so user sees the message, then replace
+        setTimeout(function(){
+          location.replace(location.href.replace('//www.', '//'));
+        }, 600);
+      } else {
+        wwwEl.innerHTML = '<span class="ok">Apex domain ✓</span>';
+      }
+    })();
+  </script>
+</body>
+</html>
