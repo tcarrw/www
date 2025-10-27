@@ -1,7 +1,7 @@
 {
   "updated": "2025-10-26",
   "version": 1,
-  "hub": { "title": "PLNT Earth", "home": "https://plnt.earth" },
+  "hub": { "title": "PLNT Earth", "home": "https://www.plnt.earth" },
   "rooms": [
     {
       "slug": "garlic",
@@ -13,8 +13,8 @@
       "theme": { "color": "#f2d18b", "tone_hz": 128 },
       "actions": [
         { "id": "watch", "type": "video", "label": "Play today’s clip", "target": "https://youtu.be/ID" },
-        { "id": "vibe", "type": "toggle", "label": "🧄 good vibe / needs salt" },
-        { "id": "breath", "type": "tone", "label": "10-second breath", "hz": 128, "seconds": 10 }
+        { "id": "vibe",  "type": "toggle", "label": "🧄 good vibe / needs salt" },
+        { "id": "breath","type": "tone",   "label": "10-second breath", "hz": 128, "seconds": 10 }
       ],
       "next": { "slug": "school", "label": "Continue to School →" }
     },
@@ -28,7 +28,7 @@
       "theme": { "color": "#b4e4d9" },
       "actions": [
         { "id": "choose", "type": "picker", "label": "Choose Luna / Wonder / Read", "options": ["luna","wonder","read"] },
-        { "id": "vibe", "type": "quiz2", "label": "2-question vibe check" }
+        { "id": "vibe",   "type": "quiz2",  "label": "2-question vibe check" }
       ],
       "next": { "slug": "mirrorhoney", "label": "Go to MirrorHoney →" }
     },
@@ -41,8 +41,8 @@
       "coming_soon": false,
       "theme": { "color": "#ffd89a", "tone_hz": 160 },
       "actions": [
-        { "id": "play", "type": "video", "label": "Play “Hello Kitty”", "target": "https://youtu.be/ID" },
-        { "id": "tint", "type": "slider", "label": "Color tint", "min": 0, "max": 100, "key": "mirrorhoney.tint" }
+        { "id": "play",  "type": "video",  "label": "Play “Hello Kitty”", "target": "https://www.youtube.com/watch?v=81tlcIq4kPA" },
+        { "id": "tint",  "type": "slider", "label": "Color tint", "min": 0, "max": 100, "key": "mirrorhoney.tint" }
       ],
       "next": { "slug": "froot", "label": "Visit Froot →" }
     },
@@ -56,7 +56,7 @@
       "theme": { "color": "#a06cd5" },
       "actions": [
         { "id": "color", "type": "picker", "label": "Pick today’s color", "options": ["violet","amber","aqua","lime"] },
-        { "id": "add", "type": "save", "label": "Add 1 song to basket" }
+        { "id": "add",   "type": "save",   "label": "Add 1 song to basket" }
       ],
       "next": { "slug": "tunes", "label": "Open Tunes →" }
     },
@@ -69,8 +69,8 @@
       "coming_soon": false,
       "theme": { "color": "#89a7ff" },
       "actions": [
-        { "id": "play", "type": "playlist", "label": "Play daily list" },
-        { "id": "stamp", "type": "share", "label": "Share a timestamp" }
+        { "id": "play",  "type": "playlist", "label": "Play daily list" },
+        { "id": "stamp", "type": "share",    "label": "Share a timestamp" }
       ],
       "next": { "slug": "bee-notes", "label": "Write Bee Note →" }
     },
@@ -83,8 +83,8 @@
       "coming_soon": false,
       "theme": { "color": "#ffd26b" },
       "actions": [
-        { "id": "note", "type": "note", "label": "Write a one-liner", "key": "bee.notes" },
-        { "id": "tag", "type": "picker", "label": "Tag ☀️/🐝/🌙", "options": ["☀️","🐝","🌙"], "key": "bee.tag" }
+        { "id": "note", "type": "note",   "label": "Write a one-liner", "key": "bee.notes" },
+        { "id": "tag",  "type": "picker", "label": "Tag ☀️/🐝/🌙", "options": ["☀️","🐝","🌙"], "key": "bee.tag" }
       ],
       "next": { "slug": "time", "label": "Open Time →" }
     },
@@ -97,7 +97,7 @@
       "coming_soon": false,
       "theme": { "color": "#c1c7d0", "tone_hz": 128 },
       "actions": [
-        { "id": "tau", "type": "slider", "label": "τ knob", "min": 0, "max": 100, "key": "time.tau" },
+        { "id": "tau",  "type": "slider", "label": "τ knob", "min": 0, "max": 100, "key": "time.tau" },
         { "id": "mode", "type": "picker", "label": "Pick a mode", "options": ["Marina","Sigrid","Clarity"], "key": "time.mode" }
       ],
       "next": { "slug": "earth", "label": "Visit Earth →" }
@@ -112,7 +112,7 @@
       "theme": { "color": "#7bd389" },
       "actions": [
         { "id": "calm", "type": "toggle", "label": "Calm Sky" },
-        { "id": "note", "type": "text", "label": "Greta-note of the day" }
+        { "id": "note", "type": "text",   "label": "Greta-note of the day" }
       ],
       "next": { "slug": "quietmoon", "label": "Go to Quietmoon →" }
     },
@@ -125,7 +125,7 @@
       "coming_soon": false,
       "theme": { "color": "#e6e6fa" },
       "actions": [
-        { "id": "timer", "type": "timer", "label": "Start 60s", "seconds": 60 },
+        { "id": "timer", "type": "timer",  "label": "Start 60s", "seconds": 60 },
         { "id": "phase", "type": "picker", "label": "Mark moon phase", "options": ["new","crescent","quarter","gibbous","full"] }
       ],
       "next": { "slug": "jar", "label": "Open Jar →" }
@@ -153,8 +153,8 @@
       "coming_soon": false,
       "theme": { "color": "#f1f3f5" },
       "actions": [
-        { "id": "excerpt", "type": "link", "label": "Open an excerpt", "target": "/some-excerpt" },
-        { "id": "ack", "type": "button", "label": "Got it" }
+        { "id": "excerpt", "type": "link",   "label": "Open an excerpt", "target": "/some-excerpt" },
+        { "id": "ack",     "type": "button", "label": "Got it" }
       ],
       "next": { "slug": "wonder", "label": "Wonder →" }
     },
@@ -167,7 +167,7 @@
       "coming_soon": false,
       "theme": { "color": "#d0bfff" },
       "actions": [
-        { "id": "template", "type": "picker", "label": "Choose template", "options": ["tweet","dm","email"] },
+        { "id": "template",  "type": "picker", "label": "Choose template", "options": ["tweet","dm","email"] },
         { "id": "recipient", "type": "picker", "label": "Select recipient", "options": ["Lee","Dua","Chappell"] }
       ],
       "next": { "slug": "time", "label": "Back to Time →" }
@@ -181,8 +181,8 @@
       "coming_soon": false,
       "theme": { "color": "#7fe7cc" },
       "actions": [
-        { "id": "loop", "type": "button", "label": "Loop 12s" },
-        { "id": "fav", "type": "favorite", "label": "Save favorite loop" }
+        { "id": "loop", "type": "button",   "label": "Loop 12s" },
+        { "id": "fav",  "type": "favorite", "label": "Save favorite loop" }
       ],
       "next": { "slug": "tunes", "label": "Play in Tunes →" }
     },
