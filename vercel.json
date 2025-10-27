@@ -1,0 +1,15 @@
+{
+  "headers": [
+    {
+      "source": "/rooms.json",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://*.plnt.earth" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" },
+        { "key": "Access-Control-Max-Age", "value": "86400" },
+        { "key": "Cache-Control", "value": "public, max-age=60, s-maxage=60, stale-while-revalidate=600" },
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+      ]
+    }
+  ]
+}
