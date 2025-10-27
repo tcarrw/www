@@ -1,7 +1,6 @@
 {
   "trailingSlash": false,
   "cleanUrls": true,
-
   "headers": [
     {
       "source": "/rooms.json",
@@ -25,10 +24,4 @@
       ]
     }
   ]
-
-  /* Notes:
-   - We intentionally do NOT set a Content-Security-Policy here so your inline
-     scripts and YouTube embeds work without extra configuration.
-   - Vercel serves Brotli/gzip automatically; no config needed.
-  */
 }
