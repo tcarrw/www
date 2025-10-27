@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-26",
+  "updated": "2025-10-27",
   "version": 1,
   "hub": { "title": "PLNT Earth", "home": "https://www.plnt.earth" },
   "rooms": [
@@ -13,8 +13,7 @@
       "theme": { "color": "#f2d18b", "tone_hz": 128 },
       "actions": [
         { "id": "watch", "type": "video", "label": "Play today’s clip", "target": "https://youtu.be/ID" },
-        { "id": "vibe",  "type": "toggle", "label": "🧄 good vibe / needs salt" },
-        { "id": "breath","type": "tone",   "label": "10-second breath", "hz": 128, "seconds": 10 }
+        { "id": "breath", "type": "tone", "label": "10-second breath", "hz": 128, "seconds": 10 }
       ],
       "next": { "slug": "school", "label": "Continue to School →" }
     },
@@ -41,13 +40,12 @@
       "coming_soon": false,
       "theme": { "color": "#ffd89a", "tone_hz": 160 },
       "actions": [
-        { "id": "play",  "type": "video", "label": "Play “Hello Kitty”", "target": "https://www.youtube.com/watch?v=81tlcIq4kPA" },
-        { "id": "breath","type": "tone",  "label": "60-second honey tone", "hz": 160, "seconds": 60 },
-        { "id": "note",  "type": "note",  "label": "One Bee Note", "key": "mirrorhoney.note" }
+        { "id": "play",   "type": "video", "label": "Play “Hello Kitty”", "target": "https://www.youtube.com/watch?v=81tlcIq4kPA" },
+        { "id": "breath", "type": "tone",  "label": "60-second honey tone", "hz": 160, "seconds": 60 },
+        { "id": "note",   "type": "note",  "label": "One Bee Note", "key": "mirrorhoney.note" }
       ],
       "next": { "slug": "froot", "label": "Visit Froot →" }
-    }
-    ,
+    },
     {
       "slug": "froot",
       "title": "Froot",
